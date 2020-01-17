@@ -18,7 +18,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
 
 () {
   local gprefix
-  zstyle -s ':zim:git' aliases-prefix 'gprefix' || gprefix=g
+  zstyle -s ':zim:git' aliases-prefix 'gprefix' || gprefix=G
 
   # Git
   alias ${gprefix}='git'
