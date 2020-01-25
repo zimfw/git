@@ -190,4 +190,5 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
 
   # Misc
   alias ${gprefix}..='cd "$(git-root || print .)"'
+  alias ${gprefix}\?=git-alias-lookup
 }

@@ -22,8 +22,7 @@ Aliases
   * `Gbm` renames a branch.
   * `GbM` renames a branch even if the new branch name already exists.
   * `Gbs` lists branches and their commits with ancestry graphs.
-  * `GbS` lists local and remote branches and their commits with ancestry
-    graphs.
+  * `GbS` lists local and remote branches and their commits with ancestry graphs.
   * `Gbx` deletes a branch.
   * `GbX` deletes a branch irrespective of its merged status.
 
@@ -34,13 +33,11 @@ Aliases
   * `Gcm` commits with the given message.
   * `Gco` checks out a branch or paths to the working tree.
   * `GcO` checks out hunks from the index or the tree interactively.
-  * `Gcf` amends the tip of the current branch reusing the same log message as
-    *HEAD*.
+  * `Gcf` amends the tip of the current branch reusing the same log message as *HEAD*.
   * `GcF` amends the tip of the current branch.
   * `Gcp` applies changes introduced by existing commits.
   * `GcP` applies changes introduced by existing commits without committing.
-  * `Gcr` reverts existing commits by reverting patches and recording new
-     commits.
+  * `Gcr` reverts existing commits by reverting patches and recording new commits.
   * `GcR` removes the *HEAD* commit.
   * `Gcs` shows one or more objects (blobs, trees, tags and commits).
   * `GcS` commits with GPG signature.
@@ -72,8 +69,7 @@ Aliases
   * `Gfc` clones a repository into a new directory.
   * `Gfm` fetches from and merges with another repository or local branch.
   * `Gfr` fetches from and rebases on top of another repository or local branch.
-  * `Gfu` removes unexisting remote-tracking references, fetches all remotes and
-    merges.
+  * `Gfu` removes unexisting remote-tracking references, fetches all remotes and merges.
 
 ### Grep
 
@@ -105,7 +101,7 @@ Aliases
   * `GlO` displays the one line log with authors and dates.
   * `Glg` displays the graph log.
   * `GlG` displays the graph log with authors and dates.
-  * `Glv` displays the log verifying the GPG signature of commits.
+  * `Glv` displays the log, verifying the GPG signature of commits.
   * `Glc` displays the commit count for each contributor in descending order.
   * `Glr` manages reflog information.
 
@@ -114,11 +110,9 @@ Aliases
   * `Gm` joins two or more development histories together.
   * `Gma` aborts the conflict resolution, and reconstructs the pre-merge state.
   * `GmC` performs the merge but does not commit.
-  * `GmF` performs the merge generating a commit even if the merge resolved as a
-    fast-forward.
+  * `GmF` creates a merge commit even if the merge could be resolved as a fast-forward.
   * `GmS` commits with GPG signature.
-  * `Gmv` verifies the GPG signature of the tip commit of the side branch being
-    merged.
+  * `Gmv` verifies the GPG signature of the tip commit of the side branch being merged.
   * `Gmt` runs the merge conflict resolution tools to resolve conflicts.
 
 ### Push
@@ -129,8 +123,7 @@ Aliases
   * `Gpa` pushes all branches.
   * `GpA` pushes all branches and tags.
   * `Gpt` pushes all tags.
-  * `Gpc` pushes the current branch and adds *origin* as an upstream reference
-    for it.
+  * `Gpc` pushes the current branch and adds *origin* as an upstream reference for it.
   * `Gpp` pulls and pushes the current branch from *origin* to *origin*.
 
 ### Rebase
@@ -140,7 +133,7 @@ Aliases
   * `Grc` continues the rebase after merge conflicts are resolved.
   * `Gri` makes a list of commits to be rebased and opens the editor.
   * `Grs` skips the current patch.
-  * `GrS` rebases and signs the commits.
+  * `GrS` rebases and GPG-signs the commits.
 
 ### Remote
 
@@ -177,8 +170,7 @@ Aliases
   * `GSI` initializes and clones submodules recursively.
   * `GSl` lists the commits of all submodules.
   * `GSm` moves a submodule.
-  * `GSs` synchronizes submodules' remote URL to the value specified in
-    `.gitmodules`.
+  * `GSs` synchronizes remote URL of submodules to the value specified in `.gitmodules`.
   * `GSu` fetches and merges the latest changes for all submodules.
   * `GSx` removes a submodule.
 
@@ -195,19 +187,17 @@ Aliases
   * `GwS` displays working-tree status.
   * `Gwd` displays changes between the working tree and the index (diff).
   * `GwD` displays changes between the working tree and the index (word diff).
-  * `Gwr` resets the current *HEAD* to the specified state, does not touch the
-    index nor the working tree.
-  * `GwR` resets the current *HEAD*, index and working tree to the specified
-    state.
+  * `Gwr` resets the current *HEAD* to the specified state, does not touch the index nor the working tree.
+  * `GwR` resets the current *HEAD*, index and working tree to the specified state.
   * `Gwc` cleans untracked files from the working tree (dry-run).
   * `GwC` cleans untracked files from the working tree.
   * `Gwx` removes files from the working tree and from the index recursively.
-  * `GwX` removes files from the working tree and from the index recursively and
-    forcefully.
+  * `GwX` removes files from the working tree and from the index recursively and forcefully.
 
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.
+  * `G?` looks up the aliases defined here (short for `git-alias-lookup`).
 
 Settings
 --------
@@ -225,9 +215,9 @@ for the GUID partition table maintenance utility.
 Functions
 ---------
 
+  * `git-alias-lookup` lists the aliases defined here searching by the given pattern.
   * `git-branch-current` displays the current branch.
-  * `git-branch-delete-interactive` asks for confirmation to also delete the
-    upstream remote branch(es).
+  * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
   * `git-dir` displays the path to the Git directory.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
   * `git-root` displays the path to the working tree root.
