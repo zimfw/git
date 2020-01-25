@@ -132,6 +132,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}rc='git rebase --continue'
   alias ${gprefix}ri='git rebase --interactive'
   alias ${gprefix}rs='git rebase --skip'
+  alias ${gprefix}rS='git rebase --exec "git commit --amend --no-edit --no-verify -S"'
 
   # Remote (R)
   alias ${gprefix}R='git remote'

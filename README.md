@@ -140,6 +140,7 @@ Aliases
   * `Grc` continues the rebase after merge conflicts are resolved.
   * `Gri` makes a list of commits to be rebased and opens the editor.
   * `Grs` skips the current patch.
+  * `GrS` rebases and signs the commits.
 
 ### Remote
 
