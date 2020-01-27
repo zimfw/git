@@ -41,6 +41,8 @@ Aliases
   * `GcR` removes the *HEAD* commit.
   * `Gcs` shows one or more objects (blobs, trees, tags and commits).
   * `GcS` commits with GPG signature.
+  * `Gcu` commits with fixup message using given commit.
+  * `GcU` commits with squash message using given commit.
   * `Gcv` verifies the GPG signature of commits.
 
 ### Conflict

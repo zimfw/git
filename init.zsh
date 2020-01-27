@@ -49,6 +49,8 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}cR='git reset "HEAD^"'
   alias ${gprefix}cs='git show --pretty=format:"${_git_log_fuller_format}"'
   alias ${gprefix}cS='git commit -S'
+  alias ${gprefix}cu='git commit --fixup'
+  alias ${gprefix}cU='git commit --squash'
   alias ${gprefix}cv='git verify-commit'
 
   # Conflict (C)
@@ -130,7 +132,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}r='git rebase'
   alias ${gprefix}ra='git rebase --abort'
   alias ${gprefix}rc='git rebase --continue'
-  alias ${gprefix}ri='git rebase --interactive'
+  alias ${gprefix}ri='git rebase --interactive --autosquash'
   alias ${gprefix}rs='git rebase --skip'
   alias ${gprefix}rS='git rebase --exec "git commit --amend --no-edit --no-verify -S"'
 
