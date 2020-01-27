@@ -30,11 +30,11 @@ Aliases
 
   * `Gc` records changes to the repository.
   * `Gca` commits all modified and deleted files.
+  * `Gcf` amends the tip of the current branch reusing the same log message as *HEAD*.
+  * `GcF` amends the tip of the current branch.
   * `Gcm` commits with the given message.
   * `Gco` checks out a branch or paths to the working tree.
   * `GcO` checks out hunks from the index or the tree interactively.
-  * `Gcf` amends the tip of the current branch reusing the same log message as *HEAD*.
-  * `GcF` amends the tip of the current branch.
   * `Gcp` applies changes introduced by existing commits.
   * `GcP` applies changes introduced by existing commits without committing.
   * `Gcr` reverts existing commits by reverting patches and recording new commits.
@@ -45,9 +45,9 @@ Aliases
 
 ### Conflict
 
-  * `GCl` lists unmerged files.
   * `GCa` adds unmerged file contents to the index.
   * `GCe` executes merge-tool on all unmerged files.
+  * `GCl` lists unmerged files.
   * `GCo` checks out our changes for unmerged paths.
   * `GCO` checks out our changes for all unmerged paths.
   * `GCt` checks out their changes for unmerged paths.
@@ -57,11 +57,11 @@ Aliases
 
   * `Gd` displays information about files in the index and the work tree.
   * `Gdc` lists cached files.
-  * `Gdx` lists deleted files.
+  * `Gdi` lists ignored files.
+  * `Gdk` lists killed files.
   * `Gdm` lists modified files.
   * `Gdu` lists untracked files.
-  * `Gdk` lists killed files.
-  * `Gdi` lists ignored files.
+  * `Gdx` lists deleted files.
 
 ### Fetch
 
@@ -84,26 +84,26 @@ Aliases
 
   * `Gia` adds file contents to the index.
   * `GiA` adds file contents to the index interactively.
-  * `Giu` adds file contents to the index (updates only known files).
   * `Gid` displays changes between the index and a named commit (diff).
   * `GiD` displays changes between the index and a named commit (word diff).
   * `Gir` resets the current *HEAD* to the specified state.
   * `GiR` resets the current index interactively.
+  * `Giu` adds file contents to the index (updates only known files).
   * `Gix` removes files/directories from the index (recursively).
   * `GiX` removes files/directories from the index (recursively and forced).
 
 ### Log
 
   * `Gl` displays the log.
-  * `Gls` displays the stats log.
+  * `Glc` displays the commit count for each contributor in descending order.
   * `Gld` displays the diff log.
-  * `Glo` displays the one line log.
-  * `GlO` displays the one line log with authors and dates.
   * `Glg` displays the graph log.
   * `GlG` displays the graph log with authors and dates.
-  * `Glv` displays the log, verifying the GPG signature of commits.
-  * `Glc` displays the commit count for each contributor in descending order.
+  * `Glo` displays the one line log.
+  * `GlO` displays the one line log with authors and dates.
   * `Glr` manages reflog information.
+  * `Gls` displays the stats log.
+  * `Glv` displays the log, verifying the GPG signature of commits.
 
 ### Merge
 
@@ -112,19 +112,19 @@ Aliases
   * `GmC` performs the merge but does not commit.
   * `GmF` creates a merge commit even if the merge could be resolved as a fast-forward.
   * `GmS` commits with GPG signature.
-  * `Gmv` verifies the GPG signature of the tip commit of the side branch being merged.
   * `Gmt` runs the merge conflict resolution tools to resolve conflicts.
+  * `Gmv` verifies the GPG signature of the tip commit of the side branch being merged.
 
 ### Push
 
   * `Gp` updates remote refs along with associated objects.
-  * `Gpf` forces a push safely (with "lease").
-  * `GpF` forces a push.
   * `Gpa` pushes all branches.
   * `GpA` pushes all branches and tags.
-  * `Gpt` pushes all tags.
   * `Gpc` pushes the current branch and adds *origin* as an upstream reference for it.
+  * `Gpf` forces a push safely (with "lease").
+  * `GpF` forces a push.
   * `Gpp` pulls and pushes the current branch from *origin* to *origin*.
+  * `Gpt` pushes all tags.
 
 ### Rebase
 
@@ -138,36 +138,36 @@ Aliases
 ### Remote
 
   * `GR` manages tracked repositories.
-  * `GRl` lists remote names and their URLs.
   * `GRa` adds a new remote.
-  * `GRx` removes a remote.
+  * `GRl` lists remote names and their URLs.
   * `GRm` renames a remote.
-  * `GRu` fetches remotes updates.
   * `GRp` prunes all stale remote tracking branches.
   * `GRs` shows information about a given remote.
+  * `GRu` fetches remotes updates.
+  * `GRx` removes a remote.
 
 ### Stash
 
   * `Gs` stashes the changes of the dirty working directory.
   * `Gsa` applies the changes recorded in a stash to the working directory.
-  * `Gsx` drops a stashed state.
-  * `GsX` drops all the stashed states.
-  * `Gsl` lists stashed states.
   * `Gsd` displays changes between the stash and its original parent.
+  * `Gsl` lists stashed states.
   * `Gsp` removes and applies a single stashed state from the stash list.
   * `Gsr` recovers a given stashed state.
   * `Gss` stashes the working directory changes, including untracked files.
   * `GsS` stashes the working directory changes interactively.
-  * `Gsw` stashes the working directory changes retaining the index.
   * `Gsu` unapplies (reverts) applied changes.
+  * `Gsw` stashes the working directory changes retaining the index.
+  * `Gsx` drops a stashed state.
+  * `GsX` drops all the stashed states.
 
 ### Submodule
 
   * `GS` initializes, updates, or inspects submodules.
   * `GSa` adds given a repository as a submodule.
   * `GSf` evaluates a shell command in each of checked out submodules.
-  * `GSi` initializes submodules.
   * `GSI` initializes and clones submodules recursively.
+  * `GSi` initializes submodules.
   * `GSl` lists the commits of all submodules.
   * `GSm` moves a submodule.
   * `GSs` synchronizes remote URL of submodules to the value specified in `.gitmodules`.
@@ -183,14 +183,14 @@ Aliases
 
 ### Working tree
 
-  * `Gws` displays working-tree status in the short format.
-  * `GwS` displays working-tree status.
+  * `Gwc` cleans untracked files from the working tree (dry-run).
+  * `GwC` cleans untracked files from the working tree.
   * `Gwd` displays changes between the working tree and the index (diff).
   * `GwD` displays changes between the working tree and the index (word diff).
   * `Gwr` resets the current *HEAD* to the specified state, does not touch the index nor the working tree.
   * `GwR` resets the current *HEAD*, index and working tree to the specified state.
-  * `Gwc` cleans untracked files from the working tree (dry-run).
-  * `GwC` cleans untracked files from the working tree.
+  * `Gws` displays working-tree status in the short format.
+  * `GwS` displays working-tree status.
   * `Gwx` removes files from the working tree and from the index recursively.
   * `GwX` removes files from the working tree and from the index recursively and forcefully.
 
