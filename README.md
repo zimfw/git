@@ -30,6 +30,7 @@ Aliases
 
   * `Gc` records changes to the repository.
   * `Gca` commits all modified and deleted files.
+  * `GcA` commits all modified and deleted files interactivly.
   * `Gcm` commits with the given message.
   * `Gco` checks out a branch or paths to the working tree.
   * `GcO` checks out hunks from the index or the tree interactively.

@@ -38,6 +38,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   # Commit (c)
   alias ${gprefix}c='git commit --verbose'
   alias ${gprefix}ca='git commit --verbose --all'
+  alias ${gprefix}cA='git commit --patch'
   alias ${gprefix}cm='git commit --message'
   alias ${gprefix}co='git checkout'
   alias ${gprefix}cO='git checkout --patch'
