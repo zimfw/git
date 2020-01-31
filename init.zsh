@@ -38,7 +38,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   # Commit (c)
   alias ${gprefix}c='git commit --verbose'
   alias ${gprefix}ca='git commit --verbose --all'
-  alias ${gprefix}cA='git commit --patch'
+  alias ${gprefix}cA='git commit --verbose --patch'
   alias ${gprefix}cm='git commit --message'
   alias ${gprefix}co='git checkout'
   alias ${gprefix}cO='git checkout --patch'
@@ -49,7 +49,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}cr='git revert'
   alias ${gprefix}cR='git reset "HEAD^"'
   alias ${gprefix}cs='git show --pretty=format:"${_git_log_fuller_format}"'
-  alias ${gprefix}cS='git commit -S'
+  alias ${gprefix}cS='git commit --verbose -S'
   alias ${gprefix}cu='git commit --fixup'
   alias ${gprefix}cU='git commit --squash'
   alias ${gprefix}cv='git verify-commit'

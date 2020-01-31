@@ -114,7 +114,7 @@ Aliases
   * `Gma` aborts the conflict resolution, and reconstructs the pre-merge state.
   * `GmC` performs the merge but does not commit.
   * `GmF` creates a merge commit even if the merge could be resolved as a fast-forward.
-  * `GmS` commits with GPG signature.
+  * `GmS` performs the merge and GPG-signs the resulting commit.
   * `Gmv` verifies the GPG signature of the tip commit of the side branch being merged.
   * `Gmt` runs the merge conflict resolution tools to resolve conflicts.
 
