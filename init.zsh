@@ -101,7 +101,8 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   # Log (l)
   alias ${gprefix}l='git log --topo-order --pretty=format:"${_git_log_fuller_format}"'
   alias ${gprefix}ls='git log --topo-order --stat --pretty=format:"${_git_log_fuller_format}"'
-  alias ${gprefix}ld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_fuller_format}"'
+  alias ${gprefix}ld='git log --topo-order --stat --patch --pretty=format:"${_git_log_fuller_format}"'
+  alias ${gprefix}lf='git log --topo-order --stat --patch --follow --pretty=format:"${_git_log_fuller_format}"'
   alias ${gprefix}lo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
   alias ${gprefix}lO='git log --topo-order --pretty=format:"${_git_log_oneline_medium_format}"'
   alias ${gprefix}lg='git log --graph --pretty=format:"${_git_log_oneline_format}"'

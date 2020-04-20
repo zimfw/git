@@ -100,6 +100,7 @@ Aliases
   * `Gl` displays the log.
   * `Gls` displays the stats log.
   * `Gld` displays the diff log.
+  * `Glf` displays the diff log of a given file, continuing beyond renames.
   * `Glo` displays the one line log.
   * `GlO` displays the one line log with authors and dates.
   * `Glg` displays the graph log.

@@ -12,4 +12,4 @@ done
 for gline in ${(f)"$(command sed -n 's/^ *alias ${gprefix}//p' ${ZIM_HOME}/modules/git/init.zsh)"}; do
   galias=${(Q)gline%%=*}
   print -R ${gprefix}${galias}'%'${gline#*=}'%'${gdoc[${galias}]}
-done | command grep "${1}" | command column -s '%' -t
+done | command grep "${(j:.*:)@}" | command column -s '%' -t
