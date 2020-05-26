@@ -92,8 +92,8 @@ Aliases
   * `GiD` displays changes between the index and a named commit (word diff).
   * `Gir` resets the current *HEAD* to the specified state.
   * `GiR` resets the current index interactively.
-  * `Gix` removes files/directories from the index (recursively).
-  * `GiX` removes files/directories from the index (recursively and forced).
+  * `Gix` removes files from the index (recursively).
+  * `GiX` removes files from the index (recursively and forced).
 
 ### Log
 
@@ -195,8 +195,10 @@ Aliases
   * `GwR` resets the current *HEAD*, index and working tree to the specified state.
   * `Gwc` cleans untracked files from the working tree (dry-run).
   * `GwC` cleans untracked files from the working tree.
-  * `Gwx` removes files from the working tree and from the index recursively.
-  * `GwX` removes files from the working tree and from the index recursively and forcefully.
+  * `Gwm` moves or renames files.
+  * `GwM` moves or renames files (forced).
+  * `Gwx` removes files from the working tree and from the index (recursively).
+  * `GwX` removes files from the working tree and from the index (recursively and forced).
 
 ### Misc
 

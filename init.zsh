@@ -189,6 +189,8 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}wR='git reset --hard'
   alias ${gprefix}wc='git clean --dry-run'
   alias ${gprefix}wC='git clean -d --force'
+  alias ${gprefix}wm='git mv'
+  alias ${gprefix}wM='git mv -f'
   alias ${gprefix}wx='git rm -r'
   alias ${gprefix}wX='git rm -rf'
 
