@@ -147,6 +147,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}Ru='git remote update'
   alias ${gprefix}Rp='git remote prune'
   alias ${gprefix}Rs='git remote show'
+  alias ${gprefix}RS='git remote set-url'
 
   # Stash (s)
   alias ${gprefix}s='git stash'

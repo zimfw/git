@@ -149,6 +149,7 @@ Aliases
   * `GRu` fetches remotes updates.
   * `GRp` prunes all stale remote tracking branches.
   * `GRs` shows information about a given remote.
+  * `GRS` changes URLs for a remote.
 
 ### Stash
 
