@@ -172,7 +172,7 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
   alias ${gprefix}Sl='git submodule status'
   alias ${gprefix}Sm='git-submodule-move'
   alias ${gprefix}Ss='git submodule sync'
-  alias ${gprefix}Su='git submodule foreach git pull origin master'
+  alias ${gprefix}Su='git submodule update --remote'
   alias ${gprefix}Sx='git-submodule-remove'
 
   # Tag (t)

@@ -176,7 +176,7 @@ Aliases
   * `GSl` lists the commits of all submodules.
   * `GSm` moves a submodule.
   * `GSs` synchronizes remote URL of submodules to the value specified in `.gitmodules`.
-  * `GSu` fetches and merges the latest changes for all submodules.
+  * `GSu` fetches and merges the latest remote changes for all submodules.
   * `GSx` removes a submodule.
 
 ### Tag
