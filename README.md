@@ -222,7 +222,7 @@ for the GUID partition table maintenance utility.
 Functions
 ---------
 
-  * `git-alias-lookup` lists the aliases defined here searching by the given pattern.
+  * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given patterns.
   * `git-branch-current` displays the current branch.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
   * `git-dir` displays the path to the Git directory.

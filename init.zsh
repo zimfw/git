@@ -1,8 +1,4 @@
 #
-# Git aliases.
-#
-
-#
 # Settings
 #
 
@@ -11,6 +7,7 @@
 _git_log_fuller_format='%C(bold yellow)commit %H%C(auto)%d%n%C(bold)Author: %C(blue)%an <%ae> %C(reset)%C(cyan)%ai (%ar)%n%C(bold)Commit: %C(blue)%cn <%ce> %C(reset)%C(cyan)%ci (%cr)%C(reset)%n%+B'
 _git_log_oneline_format='%C(bold yellow)%h%C(reset) %s%C(auto)%d%C(reset)'
 _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bold blue)<%an> %C(reset)%C(cyan)(%ar)%C(auto)%d%C(reset)'
+_git_module_home=${0:A:h}
 
 #
 # Aliases
@@ -197,5 +194,6 @@ _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bol
 
   # Misc
   alias ${gprefix}..='cd "$(git-root || print .)"'
-  alias ${gprefix}\?='git-alias-lookup'
+  alias ${gprefix}\?="git-alias-lookup ${_git_module_home}"
 }
+unset _git_module_home

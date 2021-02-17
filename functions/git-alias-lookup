@@ -4,12 +4,14 @@ zstyle -s ':zim:git' aliases-prefix 'gprefix' || gprefix=G
 
 local -A gdoc
 local gline galias
+local -r gmodule_home=${1}
+shift
 # read one-line documentations from README.md
-for gline in ${(f)"$(command sed -n 's/^ *\* `G\([^`]*\)` /\1=/p' ${ZIM_HOME}/modules/git/README.md)"}; do
+for gline in ${(f)"$(command sed -n 's/^ *\* `G\([^`]*\)` /\1=/p' ${gmodule_home}/README.md)"}; do
   gdoc[${gline%%=*}]=${gline#*=}
 done
 # read aliases from init.zsh
-for gline in ${(f)"$(command sed -n 's/^ *alias ${gprefix}//p' ${ZIM_HOME}/modules/git/init.zsh)"}; do
+for gline in ${(f)"$(command sed -n 's/^ *alias ${gprefix}//p' ${gmodule_home}/init.zsh)"}; do
   galias=${(Q)gline%%=*}
   print -R ${gprefix}${galias}'%'${gline#*=}'%'${gdoc[${galias}]}
 done | command grep "${(j:.*:)@}" | command column -s '%' -t
