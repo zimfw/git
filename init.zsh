@@ -53,12 +53,12 @@ _git_module_home=${0:A:h}
 
   # Conflict (C)
   alias ${gprefix}Cl='git --no-pager diff --diff-filter=U --name-only'
-  alias ${gprefix}Ca='git add $(gCl)'
-  alias ${gprefix}Ce='git mergetool $(gCl)'
+  alias ${gprefix}Ca="git add \$(${gprefix}Cl)"
+  alias ${gprefix}Ce="git mergetool \$(${gprefix}Cl)"
   alias ${gprefix}Co='git checkout --ours --'
-  alias ${gprefix}CO='gCo $(gCl)'
+  alias ${gprefix}CO="gCo \$(${gprefix}Cl)"
   alias ${gprefix}Ct='git checkout --theirs --'
-  alias ${gprefix}CT='gCt $(gCl)'
+  alias ${gprefix}CT="gCt \$(${gprefix}Cl)"
 
   # Data (d)
   alias ${gprefix}d='git ls-files'
