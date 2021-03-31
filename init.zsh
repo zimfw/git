@@ -56,9 +56,9 @@ _git_module_home=${0:A:h}
   alias ${gprefix}Ca="git add \$(${gprefix}Cl)"
   alias ${gprefix}Ce="git mergetool \$(${gprefix}Cl)"
   alias ${gprefix}Co='git checkout --ours --'
-  alias ${gprefix}CO="gCo \$(${gprefix}Cl)"
+  alias ${gprefix}CO="${gprefix}Co \$(${gprefix}Cl)"
   alias ${gprefix}Ct='git checkout --theirs --'
-  alias ${gprefix}CT="gCt \$(${gprefix}Cl)"
+  alias ${gprefix}CT="${gprefix}Ct \$(${gprefix}Cl)"
 
   # Data (d)
   alias ${gprefix}d='git ls-files'
