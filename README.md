@@ -215,6 +215,8 @@ used to generate all aliases:
 
     zstyle ':zim:git' aliases-prefix 'g'
 
+Add the zstyle to your `~/.zshrc` before where the module is initialized.
+
 Be careful if changing the prefix to lower case `g`, as the generated aliases
 can shadow [many](https://github.com/zimfw/git/issues/2) commands, like `gpt`
 for the GUID partition table maintenance utility.
