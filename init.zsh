@@ -30,6 +30,7 @@ alias ${gprefix}bs='git show-branch'
 alias ${gprefix}bS='git show-branch --all'
 alias ${gprefix}bx='git-branch-delete-interactive'
 alias ${gprefix}bX='git-branch-delete-interactive --force'
+alias ${gprefix}bG='git-branch-delete-gone'
 
 # Commit (c)
 alias ${gprefix}c='git commit --verbose'

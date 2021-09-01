@@ -25,12 +25,13 @@ Aliases
   * `GbS` lists local and remote branches and their commits with ancestry graphs.
   * `Gbx` deletes a branch.
   * `GbX` deletes a branch irrespective of its merged status.
+  * `GbG` deletes all local branches tracking remote branches that are gone.
 
 ### Commit
 
   * `Gc` records changes to the repository.
   * `Gca` commits all modified and deleted files.
-  * `GcA` commits all modified and deleted files interactivly.
+  * `GcA` commits all modified and deleted files interactively.
   * `Gcm` commits with the given message.
   * `Gco` checks out a branch or paths to the working tree.
   * `GcO` checks out hunks from the index or the tree interactively.
@@ -72,7 +73,7 @@ Aliases
   * `Gfc` clones a repository into a new directory.
   * `Gfm` fetches from and merges with another repository or local branch.
   * `Gfr` fetches from and rebases on top of another repository or local branch.
-  * `Gfu` removes unexisting remote-tracking references, fetches all remotes and merges.
+  * `Gfu` prunes stale remote-tracking branches, fetches all remotes and merges.
 
 ### Grep
 
@@ -147,7 +148,7 @@ Aliases
   * `GRx` removes a remote.
   * `GRm` renames a remote.
   * `GRu` fetches remotes updates.
-  * `GRp` prunes all stale remote tracking branches.
+  * `GRp` prunes all stale remote-tracking branches.
   * `GRs` shows information about a given remote.
   * `GRS` changes URLs for a remote.
 
@@ -226,6 +227,7 @@ Functions
 
   * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given patterns.
   * `git-branch-current` displays the current branch.
+  * `git-branch-delete-gone` deletes all local branches tracking remote branches that are gone.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
   * `git-dir` displays the path to the Git directory.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
