@@ -23,9 +23,10 @@ Aliases
   * `GbM` renames a branch even if the new branch name already exists.
   * `Gbs` lists branches and their commits with ancestry graphs.
   * `GbS` lists local and remote branches and their commits with ancestry graphs.
+  * `Gbu` unsets the remote-tracking information for the current or given branch.
+  * `GbG` deletes all local branches tracking remote branches that are gone.
   * `Gbx` deletes a branch.
   * `GbX` deletes a branch irrespective of its merged status.
-  * `GbG` deletes all local branches tracking remote branches that are gone.
 
 ### Commit
 
@@ -227,8 +228,8 @@ Functions
 
   * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given patterns.
   * `git-branch-current` displays the current branch.
-  * `git-branch-delete-gone` deletes all local branches tracking remote branches that are gone.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
+  * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status (gone, ahead, or behind).
   * `git-dir` displays the path to the Git directory.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
   * `git-root` displays the path to the working tree root.

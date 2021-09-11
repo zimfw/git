@@ -1,0 +1,8 @@
+# vim:et sts=2 sw=2 ft=zsh
+local -a grefs gsplits
+local gref
+grefs=(${(f)"$(command git for-each-ref --format '%(refname:short) %(upstream:track,nobracket)' refs/heads)"}) || return 1
+for gref in ${grefs}; do
+  gsplits=(${(s: :)gref})
+  if [[ ${gsplits[2]} == ${1} ]] print -R ${gsplits[1]}
+done

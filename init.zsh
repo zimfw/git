@@ -28,9 +28,10 @@ alias ${gprefix}bm='git branch --move'
 alias ${gprefix}bM='git branch --move --force'
 alias ${gprefix}bs='git show-branch'
 alias ${gprefix}bS='git show-branch --all'
+alias ${gprefix}bu='git branch --unset-upstream'
+alias ${gprefix}bG='git-branch-remote-tracking gone | xargs git branch --delete --force'
 alias ${gprefix}bx='git-branch-delete-interactive'
 alias ${gprefix}bX='git-branch-delete-interactive --force'
-alias ${gprefix}bG='git-branch-delete-gone'
 
 # Commit (c)
 alias ${gprefix}c='git commit --verbose'
@@ -124,8 +125,8 @@ alias ${gprefix}pF='git push --force'
 alias ${gprefix}pa='git push --all'
 alias ${gprefix}pA='git push --all && git push --tags'
 alias ${gprefix}pt='git push --tags'
-alias ${gprefix}pc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
-alias ${gprefix}pp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias ${gprefix}pc='git push --set-upstream origin "$(git-branch-current 2>/dev/null)"'
+alias ${gprefix}pp='git pull origin "$(git-branch-current 2>/dev/null)" && git push origin "$(git-branch-current 2>/dev/null)"'
 
 # Rebase (r)
 alias ${gprefix}r='git rebase'
