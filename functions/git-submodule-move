@@ -13,7 +13,7 @@ fi
 
 local -r src=${1}
 local -r dst=${2}
-local -r url=$(command git config --file .gitmodules --get "submodule.${src}.url")
+local -r url=$(command git config --file .gitmodules --get submodule.${src}.url)
 if [[ -z ${url} ]]; then
   print -u2 "${0}: submodule not found: ${src}"
   return 1

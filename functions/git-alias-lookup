@@ -14,7 +14,7 @@ local -r gpattern=${(j:.*:)@}
 while IFS= read -r gline; do
   if [[ ${gline} =~ '^ *\* `G([^`]*)` (.*)$' ]]; then
     galias=${gprefix}${match[1]}
-    gline=${galias}'%'${aliases[${galias}]}'%'${match[2]}
+    gline=${galias}$'\t'${aliases[${galias}]}$'\t'${match[2]}
     if [[ -z ${gpattern} || ${gline} =~ ${gpattern} ]] print -R ${gline}
   fi
-done < ${gmodule_home}/README.md | command column -s '%' -t
+done < ${gmodule_home}/README.md | command column -s $'\t' -t

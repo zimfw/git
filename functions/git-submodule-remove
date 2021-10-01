@@ -2,7 +2,7 @@
 local git_dir
 git_dir=$(git-dir) || return 1
 
-if [[ ${PWD:A} != ${$(git-root):A} ]]; then
+if [[ ${PWD:A} != ${"$(git-root)":A} ]]; then
   print -u2 "${0}: must be run from the root of the work tree"
   return 1
 fi
@@ -12,14 +12,14 @@ if (( # != 1 )); then
 fi
 
 local -r src=${1}
-if ! command git config --file .gitmodules --get "submodule.${src}.path" &>/dev/null; then
+if ! command git config --file .gitmodules --get submodule.${src}.path &>/dev/null; then
   print -u2 "${0}: submodule not found: ${src}"
   return 1
 fi
 
-command git config --file "${git_dir}/config" --remove-section "submodule.${src}" &>/dev/null && \
-    command git config --file .gitmodules --remove-section "submodule.${src}" &>/dev/null && \
+command git config --file ${git_dir}/config --remove-section submodule.${src} &>/dev/null && \
+    command git config --file .gitmodules --remove-section submodule.${src} &>/dev/null && \
     command git add .gitmodules && \
     command git rm --cached ${src} &>/dev/null && \
     rm -rf ${src} && \
-    rm -rf "${git_dir}/modules/${src}"
+    rm -rf ${git_dir}/modules/${src}
