@@ -1,6 +1,6 @@
 # vim:et sts=2 sw=2 ft=zsh
 if (( # < 1 )); then
-  print -u2 "usage: ${0} <path to git module> [pattern]..."
+  print -u2 "usage: ${0} <path to git module> [pattern...]"
   return 2
 fi
 local gprefix

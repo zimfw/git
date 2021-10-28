@@ -115,6 +115,7 @@ Aliases
 
   * `Gm` joins two or more development histories together.
   * `Gma` aborts the conflict resolution, and reconstructs the pre-merge state.
+  * `Gmc` continues the merge after conflicts are resolved.
   * `GmC` performs the merge but does not commit.
   * `GmF` creates a merge commit even if the merge could be resolved as a fast-forward.
   * `GmS` performs the merge and GPG-signs the resulting commit.
@@ -135,7 +136,7 @@ Aliases
 ### Rebase
 
   * `Gr` forward-ports local commits to the updated upstream head.
-  * `Gra` aborts the rebase.
+  * `Gra` aborts the rebase, and checks out the original branch.
   * `Grc` continues the rebase after merge conflicts are resolved.
   * `Gri` makes a list of commits to be rebased and opens the editor.
   * `Grs` skips the current patch.
