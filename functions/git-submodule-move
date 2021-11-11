@@ -2,23 +2,18 @@
 local git_root
 git_root=$(git-root) || return 1
 
-if [[ ${PWD:A} != ${git_root:A} ]]; then
-  print -u2 "${0}: must be run from the root of the work tree"
-  return 1
-fi
 if (( # != 2 )); then
   print -u2 "usage: ${0} <source> <destination>"
   return 2
 fi
 
-local -r src=${1}
-local -r dst=${2}
-local -r url=$(command git config --file .gitmodules --get submodule.${src}.url)
+local -r git_dir=${git_root}/.git src=${1} dst=${2}
+local -r url=$(command git -C ${git_root} --git-dir=${git_dir} config --file .gitmodules --get submodule.${src}.url)
 if [[ -z ${url} ]]; then
   print -u2 "${0}: submodule not found: ${src}"
   return 1
 fi
 
-mkdir -p ${dst:h} && \
+command mkdir -p ${dst:h} && \
     git-submodule-remove ${src} && \
-    command git submodule add ${url} ${dst}
+    command git -C ${git_root} --git-dir=${git_dir} submodule add ${url} ${dst}

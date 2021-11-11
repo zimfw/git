@@ -1,2 +1,10 @@
 # vim:et sts=2 sw=2 ft=zsh
-command git rev-parse --show-toplevel
+local git_root=${PWD}
+while [[ ! -d ${git_root}/.git ]]; do
+  if [[ ${git_root} == / ]]; then
+    print -u2 "fatal: not a git repository (or any of the parent directories): .git"
+    return 1
+  fi
+  git_root=${git_root:h}
+done
+print ${git_root:A}

@@ -1,25 +1,21 @@
 # vim:et sts=2 sw=2 ft=zsh
-local git_dir
-git_dir=$(git-dir) || return 1
+local git_root
+git_root=$(git-root) || return 1
 
-if [[ ${PWD:A} != ${"$(git-root)":A} ]]; then
-  print -u2 "${0}: must be run from the root of the work tree"
-  return 1
-fi
 if (( # != 1 )); then
   print -u2 "usage: ${0} <path>"
   return 2
 fi
 
-local -r src=${1}
-if ! command git config --file .gitmodules --get submodule.${src}.path &>/dev/null; then
+local -r git_dir=${git_root}/.git src=${1}
+if ! command git -C ${git_root} --git-dir=${git_dir} config --file .gitmodules --get submodule.${src}.path &>/dev/null; then
   print -u2 "${0}: submodule not found: ${src}"
   return 1
 fi
 
-command git config --file ${git_dir}/config --remove-section submodule.${src} &>/dev/null && \
-    command git config --file .gitmodules --remove-section submodule.${src} &>/dev/null && \
-    command git add .gitmodules && \
-    command git rm --cached ${src} &>/dev/null && \
-    rm -rf ${src} && \
-    rm -rf ${git_dir}/modules/${src}
+command git -C ${git_root} --git-dir=${git_dir} config --file ${git_dir}/config --remove-section submodule.${src} &>/dev/null
+command git -C ${git_root} --git-dir=${git_dir} config --file .gitmodules --remove-section submodule.${src} &>/dev/null
+command git -C ${git_root} --git-dir=${git_dir} add .gitmodules
+command git -C ${git_root} --git-dir=${git_dir} rm --cached ${src} &>/dev/null
+command rm -rf ${git_root}/${src}
+command rm -rf ${git_dir}/modules/${src}
