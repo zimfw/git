@@ -1,21 +1,22 @@
 # vim:et sts=2 sw=2 ft=zsh
-local git_root
+local git_root git_dir
 git_root=$(git-root) || return 1
+git_dir=$(git-dir) || return 1
 
 if (( # != 1 )); then
   print -u2 "usage: ${0} <path>"
   return 2
 fi
 
-local -r git_dir=${git_root}/.git src=${1}
-if ! command git -C ${git_root} --git-dir=${git_dir} config --file .gitmodules --get submodule.${src}.path &>/dev/null; then
+local -r src=${1}
+if ! command git -C ${git_root} config --file .gitmodules --get submodule.${src}.path &>/dev/null; then
   print -u2 "${0}: submodule not found: ${src}"
   return 1
 fi
 
-command git -C ${git_root} --git-dir=${git_dir} config --file ${git_dir}/config --remove-section submodule.${src} &>/dev/null
-command git -C ${git_root} --git-dir=${git_dir} config --file .gitmodules --remove-section submodule.${src} &>/dev/null
-command git -C ${git_root} --git-dir=${git_dir} add .gitmodules
-command git -C ${git_root} --git-dir=${git_dir} rm --cached ${src} &>/dev/null
+command git -C ${git_root} config --file ${git_dir}/config --remove-section submodule.${src} &>/dev/null
+command git -C ${git_root} config --file .gitmodules --remove-section submodule.${src} &>/dev/null
+command git -C ${git_root} add .gitmodules
+command git -C ${git_root} rm --cached ${src} &>/dev/null
 command rm -rf ${git_root}/${src}
 command rm -rf ${git_dir}/modules/${src}
