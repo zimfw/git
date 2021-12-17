@@ -180,7 +180,7 @@ alias ${gprefix}ts='git tag --sign'
 alias ${gprefix}tv='git verify-tag'
 alias ${gprefix}tx='git tag --delete'
 
-# Working tree (w)
+# Main working tree (w)
 alias ${gprefix}ws='git status --short'
 alias ${gprefix}wS='git status'
 alias ${gprefix}wd='git diff --no-ext-diff'
@@ -194,14 +194,13 @@ alias ${gprefix}wM='git mv -f'
 alias ${gprefix}wx='git rm -r'
 alias ${gprefix}wX='git rm -rf'
 
-# Managing multiple working trees (W)
+# Working trees (W)
 alias ${gprefix}W='git worktree'
 alias ${gprefix}Wa='git worktree add'
 alias ${gprefix}Wl='git worktree list'
 alias ${gprefix}Wm='git worktree move'
 alias ${gprefix}Wp='git worktree prune'
 alias ${gprefix}Wx='git worktree remove'
-alias ${gprefix}WX='git worktree remove --force'
 
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'

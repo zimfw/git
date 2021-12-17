@@ -189,10 +189,10 @@ Aliases
   * `Gtv` verifies the GPG signature of tags.
   * `Gtx` deletes tags with given names.
 
-### Working tree
+### Main working tree
 
-  * `Gws` displays working-tree status in the short format.
-  * `GwS` displays working-tree status.
+  * `Gws` displays working tree status in the short format.
+  * `GwS` displays working tree status.
   * `Gwd` displays changes between the working tree and the index (diff).
   * `GwD` displays changes between the working tree and the index (word diff).
   * `Gwr` resets the current *HEAD* to the specified state, does not touch the index nor the working tree.
@@ -204,15 +204,14 @@ Aliases
   * `Gwx` removes files from the working tree and from the index (recursively).
   * `GwX` removes files from the working tree and from the index (recursively and forced).
 
-### Managing multiple working trees
+### Working trees
 
-  * `GW` handle working trees.
-  * `GWa` adds a new working tree.
-  * `GWl` lists current working trees.
+  * `GW` manages multiple working trees.
+  * `GWa` creates path with a new working tree.
+  * `GWl` lists details of all working trees.
   * `GWm` moves a working tree to a new location.
   * `GWp` prunes working tree information.
-  * `GWx` removes working tree.
-  * `GWx` removes working tree (forced).
+  * `GWx` removes a working tree.
 
 ### Misc
 
