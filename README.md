@@ -204,6 +204,16 @@ Aliases
   * `Gwx` removes files from the working tree and from the index (recursively).
   * `GwX` removes files from the working tree and from the index (recursively and forced).
 
+### Managing multiple working trees
+
+  * `GW` handle working trees.
+  * `GWa` adds a new working tree.
+  * `GWl` lists current working trees.
+  * `GWm` moves a working tree to a new location.
+  * `GWp` prunes working tree information.
+  * `GWx` removes working tree.
+  * `GWx` removes working tree (forced).
+
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.

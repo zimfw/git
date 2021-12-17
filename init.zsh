@@ -194,6 +194,15 @@ alias ${gprefix}wM='git mv -f'
 alias ${gprefix}wx='git rm -r'
 alias ${gprefix}wX='git rm -rf'
 
+# Managing multiple working trees (W)
+alias ${gprefix}W='git worktree'
+alias ${gprefix}Wa='git worktree add'
+alias ${gprefix}Wl='git worktree list'
+alias ${gprefix}Wm='git worktree move'
+alias ${gprefix}Wp='git worktree prune'
+alias ${gprefix}Wx='git worktree remove'
+alias ${gprefix}WX='git worktree remove --force'
+
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'
 alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"
