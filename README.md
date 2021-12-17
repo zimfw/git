@@ -17,6 +17,7 @@ Aliases
 
   * `Gb` lists, creates, renames, and deletes branches.
   * `Gbc` creates a new branch.
+  * `Gbd` detaches *HEAD* at the tip of the current or given branch.
   * `Gbl` lists branches and their commits.
   * `GbL` lists local and remote branches and their commits.
   * `Gbm` renames a branch.

@@ -22,6 +22,7 @@ alias ${gprefix}='git'
 # Branch (b)
 alias ${gprefix}b='git branch'
 alias ${gprefix}bc='git checkout -b'
+alias ${gprefix}bd='git checkout --detach'
 alias ${gprefix}bl='git branch -vv'
 alias ${gprefix}bL='git branch --all -vv'
 alias ${gprefix}bm='git branch --move'
