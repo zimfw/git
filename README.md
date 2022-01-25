@@ -192,8 +192,8 @@ Aliases
 
 ### Main working tree
 
-  * `Gws` displays working tree status in the short format.
-  * `GwS` displays working tree status.
+  * `Gws` displays the working tree status in short format.
+  * `GwS` displays the working tree status.
   * `Gwd` displays changes between the working tree and the index (diff).
   * `GwD` displays changes between the working tree and the index (word diff).
   * `Gwr` resets the current *HEAD* to the specified state, does not touch the index nor the working tree.
@@ -217,7 +217,7 @@ Aliases
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.
-  * `G?` looks up the aliases defined here (short for `git-alias-lookup`).
+  * `G?` looks up the aliases defined here with the given regular expressions.
 
 Settings
 --------
@@ -237,10 +237,11 @@ for the GUID partition table maintenance utility.
 Functions
 ---------
 
-  * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given patterns.
+  * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given regular expressions.
   * `git-branch-current` displays the current branch.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
-  * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status (gone, ahead, or behind).
+  * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status
+     (gone, ahead, behind, or ahead behind).
   * `git-dir` displays the path to the Git directory.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
   * `git-root` displays the path to the working tree root.
