@@ -202,6 +202,7 @@ alias ${gprefix}Wl='git worktree list'
 alias ${gprefix}Wm='git worktree move'
 alias ${gprefix}Wp='git worktree prune'
 alias ${gprefix}Wx='git worktree remove'
+alias ${gprefix}WX='git worktree remove --force'
 
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'

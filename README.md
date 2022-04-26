@@ -213,6 +213,7 @@ Aliases
   * `GWm` moves a working tree to a new location.
   * `GWp` prunes working tree information.
   * `GWx` removes a working tree.
+  * `GWX` removes a working tree (forced).
 
 ### Misc
 
