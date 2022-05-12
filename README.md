@@ -22,6 +22,7 @@ Aliases
   * `GbL` lists local and remote branches and their commits.
   * `Gbm` renames a branch.
   * `GbM` renames a branch even if the new branch name already exists.
+  * `GbR` resets a branch even if the branch name already exists.
   * `Gbs` lists branches and their commits with ancestry graphs.
   * `GbS` lists local and remote branches and their commits with ancestry graphs.
   * `Gbu` unsets the remote-tracking information for the current or given branch.
