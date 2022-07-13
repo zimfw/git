@@ -20,3 +20,4 @@ command git -C ${git_root} add .gitmodules
 command git -C ${git_root} rm --cached ${src} &>/dev/null
 command rm -rf ${git_root}/${src}
 command rm -rf ${git_dir}/modules/${src}
+return 0

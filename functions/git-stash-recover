@@ -1,8 +1,13 @@
 # vim:et sts=2 sw=2 ft=zsh
 command git rev-parse --is-inside-work-tree >/dev/null || return 1
 
+if (( ! # )); then
+  print -u2 "usage: ${0} <commit...>"
+  return 2
+fi
+
 local commit
 for commit in "${@}"; do
-  git update-ref -m "$(command git log -1 --pretty='format:%s' ${commit})" \
-    refs/stash ${commit}
+  command git update-ref \
+    -m "$(command git log -1 --pretty='format:%s' ${commit})" refs/stash ${commit}
 done
