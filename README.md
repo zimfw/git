@@ -216,7 +216,7 @@ Aliases
   * `GWx` removes a working tree.
   * `GWX` removes a working tree (forced).
 
-## Switch
+### Switch
 
   * `Gy` switches branches.
 
