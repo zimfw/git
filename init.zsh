@@ -205,6 +205,9 @@ alias ${gprefix}Wp='git worktree prune'
 alias ${gprefix}Wx='git worktree remove'
 alias ${gprefix}WX='git worktree remove --force'
 
+# Switch (y)
+alias ${gprefix}y='git switch'
+
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'
 alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"

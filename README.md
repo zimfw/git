@@ -216,6 +216,10 @@ Aliases
   * `GWx` removes a working tree.
   * `GWX` removes a working tree (forced).
 
+## Switch
+
+  * `Gy` switches branches.
+
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.
