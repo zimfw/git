@@ -74,6 +74,8 @@ alias ${gprefix}di='git status --porcelain --short --ignored | sed -n "s/^!! //p
 
 # Fetch (f)
 alias ${gprefix}f='git fetch'
+alias ${gprefix}fa='git fetch --all'
+alias ${gprefix}fap='git fetch --all --prune'
 alias ${gprefix}fc='git clone'
 alias ${gprefix}fm='git pull --no-rebase'
 alias ${gprefix}fr='git pull --rebase'
