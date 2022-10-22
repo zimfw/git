@@ -73,6 +73,8 @@ Aliases
 ### Fetch
 
   * `Gf` downloads objects and references from another repository.
+  * `Gfa` downloads objects and references from all remotes.
+  * `Gfp` prunes stale remote-tracking branches and fetches all remotes.
   * `Gfc` clones a repository into a new directory.
   * `Gfm` fetches from and merges with another repository or local branch.
   * `Gfr` fetches from and rebases on top of another repository or local branch.
