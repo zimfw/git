@@ -1,4 +1,6 @@
 # vim:et sts=2 sw=2 ft=zsh
+builtin emulate -L zsh
+
 command git rev-parse --is-inside-work-tree >/dev/null || return 1
 
 if (( ! # )); then

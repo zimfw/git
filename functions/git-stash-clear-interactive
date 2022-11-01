@@ -1,5 +1,5 @@
 # vim:et sts=2 sw=2 ft=zsh
-setopt LOCAL_OPTIONS PIPE_FAIL
+builtin emulate -L zsh -o PIPE_FAIL
 
 local -i stashed
 stashed=$(command git rev-list --walk-reflogs --count refs/stash -- 2>/dev/null) || return 1

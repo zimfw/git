@@ -1,4 +1,6 @@
 # vim:et sts=2 sw=2 ft=zsh
+builtin emulate -L zsh
+
 local -a grefs gsplits
 local gref
 grefs=(${(f)"$(command git for-each-ref --format '%(refname:short) %(upstream:track,nobracket)' refs/heads)"}) || return 1

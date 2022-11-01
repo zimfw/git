@@ -1,4 +1,6 @@
 # vim:et sts=2 sw=2 ft=zsh
+builtin emulate -L zsh
+
 local git_root git_dir
 git_root=$(git-root) || return 1
 git_dir=$(git-dir) || return 1
