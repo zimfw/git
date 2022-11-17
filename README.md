@@ -226,6 +226,7 @@ Aliases
 
   * `G..` changes the current directory to the top level of the working tree.
   * `G?` looks up the aliases defined here with the given regular expressions.
+  * `Gh` displays help information about Git
 
 Settings
 --------

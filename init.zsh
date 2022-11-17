@@ -213,6 +213,7 @@ alias ${gprefix}y='git switch'
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'
 alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"
+alias ${gprefix}h='git help'
 
 # Cannot use anon function with local variables, because we're evaluating ${0}
 unset gmodule_home gprefix
