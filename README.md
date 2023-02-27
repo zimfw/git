@@ -171,6 +171,7 @@ Aliases
   * `Gss` stashes the working directory changes, including untracked files.
   * `GsS` stashes the working directory changes interactively.
   * `Gsw` stashes the working directory changes retaining the index.
+  * `Gsi` stashes changes in the index retaining the working directory.
   * `Gsu` unapplies (reverts) applied changes.
 
 ### Submodule
