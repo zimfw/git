@@ -209,7 +209,7 @@ alias ${gprefix}Wx='git worktree remove'
 alias ${gprefix}WX='git worktree remove --force'
 
 # Switch (y)
-alias ${gprefix}y='git switch'
+alias ${gprefix}y='git switch' # requires Git 2.23
 
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'

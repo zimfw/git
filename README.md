@@ -62,7 +62,7 @@ Aliases
 
 ### Data
 
-  * `Gd` displays information about files in the index and the work tree.
+  * `Gd` displays information about files in the index and the working tree.
   * `Gdc` lists cached files.
   * `Gdx` lists deleted files.
   * `Gdm` lists modified files.
@@ -200,7 +200,7 @@ Aliases
   * `GwS` displays the working tree status.
   * `Gwd` displays changes between the working tree and the index (diff).
   * `GwD` displays changes between the working tree and the index (word diff).
-  * `Gwr` resets the current *HEAD* to the specified state, does not touch the index nor the working tree.
+  * `Gwr` resets the current *HEAD* to the specified state, preserving the index and working tree.
   * `GwR` resets the current *HEAD*, index and working tree to the specified state.
   * `Gwc` cleans untracked files from the working tree (dry-run).
   * `GwC` cleans untracked files from the working tree.
