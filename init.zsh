@@ -89,6 +89,9 @@ alias ${gprefix}gL='git grep --files-without-match'
 alias ${gprefix}gv='git grep --invert-match'
 alias ${gprefix}gw='git grep --word-regexp'
 
+# Help (h)
+alias ${gprefix}h='git help'
+
 # Index (i)
 alias ${gprefix}ia='git add'
 alias ${gprefix}iA='git add --patch'
@@ -210,11 +213,11 @@ alias ${gprefix}WX='git worktree remove --force'
 
 # Switch (y)
 alias ${gprefix}y='git switch' # requires Git 2.23
+alias ${gprefix}yd='git switch --detach'
 
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'
 alias ${gprefix}\?="git-alias-lookup ${gmodule_home}"
-alias ${gprefix}h='git help'
 
 # Cannot use anon function with local variables, because we're evaluating ${0}
 unset gmodule_home gprefix

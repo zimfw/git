@@ -1,7 +1,7 @@
 git
 ===
 
-Provides handy git aliases and functions.
+Provides handy Git aliases and functions.
 
 Many thanks to [Sorin Ionescu](https://github.com/sorin-ionescu) for the
 excellent original aliases.
@@ -88,6 +88,10 @@ Aliases
   * `GgL` lists files that are not matching a pattern.
   * `Ggv` displays lines not matching a pattern.
   * `Ggw` displays lines matching a pattern at word boundary.
+
+### Help
+
+  * `Gh` displays help information about Git
 
 ### Index
 
@@ -222,12 +226,12 @@ Aliases
 ### Switch
 
   * `Gy` switches branches.
+  * `Gyd` switches to a commit for inspection and discardable experiments.
 
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.
   * `G?` looks up the aliases defined here with the given regular expressions.
-  * `Gh` displays help information about Git
 
 Settings
 --------
