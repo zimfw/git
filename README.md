@@ -194,6 +194,7 @@ Aliases
 ### Tag
 
   * `Gt` creates, lists, deletes or verifies a tag object signed with GPG.
+  * `Gtl` lists tags in reverse chronological order (by commit date).
   * `Gts` creates a GPG-signed tag.
   * `Gtv` verifies the GPG signature of tags.
   * `Gtx` deletes tags with given names.
