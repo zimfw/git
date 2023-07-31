@@ -184,6 +184,7 @@ alias ${gprefix}Sx='git-submodule-remove'
 
 # Tag (t)
 alias ${gprefix}t='git tag'
+alias ${gprefix}tl='git tag --list --sort=-committerdate'
 alias ${gprefix}ts='git tag --sign'
 alias ${gprefix}tv='git verify-tag'
 alias ${gprefix}tx='git tag --delete'
