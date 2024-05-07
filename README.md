@@ -228,6 +228,7 @@ Aliases
 ### Switch
 
   * `Gy` switches branches.
+  * `Gyc` creates and switches branches.
   * `Gyd` switches to a commit for inspection and discardable experiments.
 
 ### Misc
