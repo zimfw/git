@@ -25,6 +25,7 @@ alias ${gprefix}bc='git checkout -b'
 alias ${gprefix}bd='git checkout --detach'
 alias ${gprefix}bl='git branch -vv'
 alias ${gprefix}bL='git branch --all -vv'
+alias ${gprefix}bn='git branch --no-contains'
 alias ${gprefix}bm='git branch --move'
 alias ${gprefix}bM='git branch --move --force'
 alias ${gprefix}bR='git branch --force'
@@ -71,6 +72,7 @@ alias ${gprefix}dm='git ls-files --modified'
 alias ${gprefix}du='git ls-files --other --exclude-standard'
 alias ${gprefix}dk='git ls-files --killed'
 alias ${gprefix}di='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
+alias ${gprefix}dI='git ls-files --ignored --exclude-per-directory=.gitignore --cached'
 
 # Fetch (f)
 alias ${gprefix}f='git fetch'
@@ -91,11 +93,13 @@ alias ${gprefix}gw='git grep --word-regexp'
 
 # Help (h)
 alias ${gprefix}h='git help'
+alias ${gprefix}hw='git help --web'
 
 # Index (i)
 alias ${gprefix}ia='git add'
 alias ${gprefix}iA='git add --patch'
 alias ${gprefix}iu='git add --update'
+alias ${gprefix}iU='git add --verbose --all'
 alias ${gprefix}id='git diff --no-ext-diff --cached'
 alias ${gprefix}iD='git diff --no-ext-diff --cached --word-diff'
 alias ${gprefix}ir='git reset'
