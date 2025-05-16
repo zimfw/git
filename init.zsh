@@ -141,6 +141,13 @@ alias ${gprefix}pt='git push --tags'
 alias ${gprefix}pc='git push --set-upstream origin "$(git-branch-current 2>/dev/null)"'
 alias ${gprefix}pp='git pull origin "$(git-branch-current 2>/dev/null)" && git push origin "$(git-branch-current 2>/dev/null)"'
 
+# Pull (pl)
+alias ${gprefix}pl='git pull'
+alias ${gprefix}plr='git pull --rebase'
+alias ${gprefix}plf='git pull --ff-only'
+alias ${gprefix}pla='git pull --all'
+alias ${gprefix}plp='git pull --prune'
+
 # Rebase (r)
 alias ${gprefix}r='git rebase'
 alias ${gprefix}ra='git rebase --abort'
