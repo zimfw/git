@@ -36,7 +36,7 @@ Aliases
   * `Gc` records changes to the repository.
   * `Gca` commits all modified and deleted files.
   * `GcA` commits all modified and deleted files interactively.
-  * `Gcm` commits with the given message.
+  * `Gcm` commits with a given message.
   * `Gco` checks out a branch or paths to the working tree.
   * `GcO` checks out hunks from the index or the tree interactively.
   * `Gcf` amends the tip of the current branch reusing the same log message as *HEAD*.
@@ -181,12 +181,12 @@ Aliases
   * `GsS` stashes the working directory changes interactively.
   * `Gsw` stashes the working directory changes retaining the index.
   * `Gsi` stashes changes in the index retaining the working directory.
-  * `Gsu` unapplies (reverts) applied changes.
+  * `Gsu` undoes (reverses) applied changes.
 
 ### Submodule
 
   * `GS` initializes, updates, or inspects submodules.
-  * `GSa` adds given a repository as a submodule.
+  * `GSa` adds a given repository as a submodule.
   * `GSf` evaluates a shell command in each of checked out submodules.
   * `GSi` initializes submodules.
   * `GSI` initializes and clones submodules recursively.
@@ -238,7 +238,7 @@ Aliases
 ### Misc
 
   * `G..` changes the current directory to the top level of the working tree.
-  * `G?` looks up the aliases defined here with the given regular expressions.
+  * `G?` looks up the aliases defined here with given regular expressions.
 
 Settings
 --------
@@ -249,7 +249,7 @@ used to generate all aliases:
 
     zstyle ':zim:git' aliases-prefix 'g'
 
-Add the zstyle to your `~/.zshrc` before where the module is initialized.
+Add the zstyle to your `~/.zshrc` before the module is initialized.
 
 Be careful if changing the prefix to lower case `g`, as the generated aliases
 can shadow [many](https://github.com/zimfw/git/issues/2) commands, like `gpt`
@@ -258,7 +258,7 @@ for the GUID partition table maintenance utility.
 Functions
 ---------
 
-  * `git-alias-lookup` lists the aliases defined here searching at the given path, by the given regular expressions.
+  * `git-alias-lookup` lists the aliases defined here searching at a given path, by given regular expressions.
   * `git-branch-current` displays the current branch.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
   * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status

@@ -4,9 +4,9 @@
 
 # Log colour scheme has bold yellow commit hash, bold blue author, cyan date, auto ref names
 # See https://git-scm.com/docs/pretty-formats
-typeset -g _git_log_fuller_format='%C(bold yellow)commit %H%C(auto)%d%n%C(bold)Author: %C(blue)%an <%ae> %C(reset)%C(cyan)%ai (%ar)%n%C(bold)Commit: %C(blue)%cn <%ce> %C(reset)%C(cyan)%ci (%cr)%C(reset)%n%+B'
+typeset -g _git_log_fuller_format='%C(bold yellow)commit %H%C(auto)%d%n%C(bold)Author: %C(blue)%an <%ae> %C(cyan)%ai (%ar)%n%C(bold)Commit: %C(blue)%cn <%ce> %C(cyan)%ci (%cr)%C(reset)%n%+B'
 typeset -g _git_log_oneline_format='%C(bold yellow)%h%C(reset) %s%C(auto)%d%C(reset)'
-typeset -g _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bold blue)%an %C(reset)%C(cyan)%as (%ar)%C(auto)%d%C(reset)'
+typeset -g _git_log_oneline_medium_format='%C(bold yellow)%h%C(reset) %<(50,trunc)%s %C(bold blue)%an %C(cyan)%as (%ar)%C(auto)%d%C(reset)'
 local gmodule_home=${0:A:h}
 
 #
@@ -23,8 +23,8 @@ alias ${gprefix}='git'
 alias ${gprefix}b='git branch'
 alias ${gprefix}bc='git checkout -b'
 alias ${gprefix}bd='git checkout --detach'
-alias ${gprefix}bl='git branch -vv'
-alias ${gprefix}bL='git branch --all -vv'
+alias ${gprefix}bl='git branch --list -vv'
+alias ${gprefix}bL='git branch --list -vv --all'
 alias ${gprefix}bn='git branch --no-contains'
 alias ${gprefix}bm='git branch --move'
 alias ${gprefix}bM='git branch --move --force'
@@ -56,7 +56,7 @@ alias ${gprefix}cU='git commit --squash'
 alias ${gprefix}cv='git verify-commit'
 
 # Conflict (C)
-alias ${gprefix}Cl='git --no-pager diff --diff-filter=U --name-only'
+alias ${gprefix}Cl='git --no-pager diff --name-only --diff-filter=U'
 alias ${gprefix}Ca="git add \$(${gprefix}Cl)"
 alias ${gprefix}Ce="git mergetool \$(${gprefix}Cl)"
 alias ${gprefix}Co='git checkout --ours --'
@@ -71,7 +71,7 @@ alias ${gprefix}dx='git ls-files --deleted'
 alias ${gprefix}dm='git ls-files --modified'
 alias ${gprefix}du='git ls-files --other --exclude-standard'
 alias ${gprefix}dk='git ls-files --killed'
-alias ${gprefix}di='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
+alias ${gprefix}di='git status --porcelain --ignored=matching | sed -n "s/^!! //p"'
 alias ${gprefix}dI='git ls-files --ignored --exclude-per-directory=.gitignore --cached'
 
 # Fetch (f)
@@ -96,9 +96,9 @@ alias ${gprefix}h='git help'
 alias ${gprefix}hw='git help --web'
 
 # Index (i)
-alias ${gprefix}ia='git add'
+alias ${gprefix}ia='git add --verbose'
 alias ${gprefix}iA='git add --patch'
-alias ${gprefix}iu='git add --update'
+alias ${gprefix}iu='git add --verbose --update'
 alias ${gprefix}iU='git add --verbose --all'
 alias ${gprefix}id='git diff --no-ext-diff --cached'
 alias ${gprefix}iD='git diff --no-ext-diff --cached --word-diff'
@@ -195,7 +195,7 @@ alias ${gprefix}tv='git verify-tag'
 alias ${gprefix}tx='git tag --delete'
 
 # Main working tree (w)
-alias ${gprefix}ws='git status --short'
+alias ${gprefix}ws='git status --short --branch'
 alias ${gprefix}wS='git status'
 alias ${gprefix}wd='git diff --no-ext-diff'
 alias ${gprefix}wD='git diff --no-ext-diff --word-diff'
