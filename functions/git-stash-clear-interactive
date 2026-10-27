@@ -1,9 +1,9 @@
 # vim:et sts=2 sw=2 ft=zsh
-builtin emulate -L zsh -o PIPE_FAIL
+builtin emulate -L zsh
 
-local -i stashed
-stashed=$(command git rev-list --walk-reflogs --count refs/stash -- 2>/dev/null) || return 1
-if (( stashed )) && read -q "?Clear ${stashed} stashed state(s) [y/N]? "; then
+local -i gstashed
+gstashed=$(command git rev-list --walk-reflogs --count refs/stash -- 2>/dev/null) || gstashed=0
+if (( gstashed )) && read -q "?Clear ${gstashed} stashed state(s) [y/N]? "; then
   print
   command git stash clear
 fi

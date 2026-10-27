@@ -1,10 +1,10 @@
 # vim:et sts=2 sw=2 ft=zsh
 builtin emulate -L zsh
 
-local -a grefs gsplits
+local -a grefs gfields
 local gref
-grefs=(${(f)"$(command git for-each-ref --format '%(refname:short) %(upstream:track,nobracket)' refs/heads)"}) || return 1 # nobracket requires Git 2.13
+grefs=(${(f)"$(command git for-each-ref --format '%(refname:lstrip=2) %(upstream:track,nobracket)' refs/heads)"}) || return 1 # lstrip and nobracket require Git 2.13
 for gref in ${grefs}; do
-  gsplits=(${(s: :)gref})
-  if [[ ${gsplits[2]} == ${1} && ${gsplits[4]} == ${2} ]] print -R ${gsplits[1]}
+  gfields=(${(s: :)gref})
+  if [[ ${gfields[2]} == ${1} && ${gfields[4]} == ${2} ]] print -R ${gfields[1]}
 done

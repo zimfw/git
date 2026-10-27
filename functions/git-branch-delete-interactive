@@ -1,16 +1,18 @@
 # vim:et sts=2 sw=2 ft=zsh
 builtin emulate -L zsh
 
-local -a remotes
+local -a gremotes
 if (( ${*[(I)(-r|--remotes)]} )); then
-  remotes=(${^*:#-*})
+  gremotes=(${^*:#-*})
 else
-  remotes=(${(f)"$(command git rev-parse --abbrev-ref ${^*:#-*}@{u} 2>/dev/null)"}) || remotes=()
+  local gbranch
+  for gbranch (${@:#-*}) gremotes+=(${(f)"$(command git rev-parse --abbrev-ref ${gbranch}@{u} 2>/dev/null)"})
 fi
-if command git branch --delete ${@} && \
-    (( ${#remotes} )) && \
-    read -q "?Also delete remote branch(es) ${remotes} [y/N]? "; then
+local -i gerror=0
+command git branch --delete ${@} || gerror=1
+if (( ${#gremotes} )) && read -q "?Also delete remote branch(es) ${gremotes} [y/N]? "; then
   print
-  local remote
-  for remote (${remotes}) command git push ${remote%%/*} :${remote#*/}
+  local gremote
+  for gremote (${gremotes}) command git push ${gremote%%/*} :${gremote#*/} || gerror=1
 fi
+return ${gerror}

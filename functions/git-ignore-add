@@ -5,4 +5,5 @@ local git_root
 git_root=$(git-root) || return 1
 
 # we are in a git repository. add parameters to .gitignore
-for file (${@}) print ${file} >>! ${git_root}/.gitignore
+local gfile
+for gfile (${@}) print -R ${gfile} >>! ${git_root}/.gitignore

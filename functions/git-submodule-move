@@ -9,13 +9,11 @@ if (( # != 2 )); then
   return 2
 fi
 
-local -r src=${1} dst=${2}
-local -r url=$(command git -C ${git_root} config --file .gitmodules --get submodule.${src}.url)
-if [[ -z ${url} ]]; then
-  print -u2 "${0}: submodule not found: ${src}"
+local -r gurl=$(command git -C ${git_root} config --file .gitmodules --get submodule.${1}.url)
+if [[ -z ${gurl} ]]; then
+  print -u2 "${0}: submodule not found: ${1}"
   return 1
 fi
 
-command mkdir -p ${dst:h} && \
-    git-submodule-remove ${src} && \
-    command git -C ${git_root} submodule add ${url} ${dst}
+git-submodule-remove ${1} && \
+    command git -C ${git_root} submodule add ${gurl} ${2}
