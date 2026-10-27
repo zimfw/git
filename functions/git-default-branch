@@ -1,0 +1,22 @@
+# vim:et sts=2 sw=2 ft=zsh
+builtin emulate -L zsh
+
+local gref
+gref=$(command git symbolic-ref -q --short refs/remotes/origin/HEAD)
+case ${?} in
+  0)
+    print -R ${gref#origin/}
+    return
+    ;;
+  128) return 1 ;;
+esac
+local gname
+for gname in $(command git config --get init.defaultBranch) main master; do
+  for gref in refs/{heads,remotes/origin}/${gname}; do
+    if command git show-ref -q --verify ${gref}; then
+      print -R ${gname}
+      return
+    fi
+  done
+done
+return 1

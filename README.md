@@ -56,6 +56,7 @@ Aliases
   * `GCl` lists unmerged files.
   * `GCa` adds unmerged file contents to the index.
   * `GCe` executes merge-tool on all unmerged files.
+  * `GCE` opens all unmerged files in the editor.
   * `GCo` checks out our changes for unmerged paths.
   * `GCO` checks out our changes for all unmerged paths.
   * `GCt` checks out their changes for unmerged paths.
@@ -70,7 +71,7 @@ Aliases
   * `Gdu` lists untracked files.
   * `Gdk` lists killed files.
   * `Gdi` lists ignored files.
-  * `GdI` lists commited files that would be ignored.
+  * `GdI` lists committed files that would be ignored.
 
 ### Fetch
 
@@ -204,6 +205,13 @@ Aliases
   * `Gtv` verifies the GPG signature of tags.
   * `Gtx` deletes tags with given names.
 
+### Restore
+
+  * `Gu` undoes working tree file changes.
+  * `Gus` undoes working tree file changes from a given source.
+  * `Gui` undoes indexed file changes.
+  * `Gua` undoes all indexed and working tree file changes.
+
 ### Main working tree
 
   * `Gws` displays the working tree status in short format.
@@ -212,6 +220,7 @@ Aliases
   * `GwD` displays changes between the working tree and the index (word diff).
   * `Gwr` resets the current *HEAD* to the specified state, preserving the index and working tree.
   * `GwR` resets the current *HEAD*, index and working tree to the specified state.
+  * `Gwk` resets the current *HEAD*, index and working tree to the specified state, keeping local changes.
   * `Gwc` cleans untracked files from the working tree (dry-run).
   * `GwC` cleans untracked files from the working tree.
   * `Gwm` moves or renames files.
@@ -234,6 +243,7 @@ Aliases
   * `Gy` switches branches.
   * `Gyc` creates a new branch with given name before switching to it.
   * `Gyd` switches to a commit for inspection and discardable experiments.
+  * `Gym` switches to default/main branch.
 
 ### Misc
 
@@ -264,7 +274,9 @@ Functions
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
   * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status
      (gone, ahead, behind, or ahead behind).
+  * `git-default-branch` displays the default branch.
   * `git-dir` displays the path to the Git directory.
+  * `git-edit-unmerged` opens all unmerged files in the editor.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
   * `git-root` displays the path to the working tree root.
   * `git-stash-clear-interactive` asks for confirmation before clearing the stash.

@@ -1,0 +1,15 @@
+# vim:et sts=2 sw=2 ft=zsh
+builtin emulate -L zsh
+
+local git_root git_editor
+git_root=$(git-root) || return 1
+git_editor=$(command git var GIT_EDITOR) || return 1
+local -a files
+files=(${(f)"$(command git -C ${git_root} diff --name-only --diff-filter=U)"})
+if (( ! ${#files} )); then
+  print -u2 "${0}: no unmerged files"
+  return 1
+fi
+set -- ${git_root}/${^files}
+# GIT_EDITOR is a POSIX shell command, so evaluate it with sh rules, like Git does
+emulate sh -c "${git_editor}"' "$@"'
