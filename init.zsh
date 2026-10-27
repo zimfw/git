@@ -170,9 +170,9 @@ alias ${gprefix}sl='git stash list'
 alias ${gprefix}sd='git stash show --stat --patch --include-untracked' # requires Git 2.32
 alias ${gprefix}sp='git stash pop'
 alias ${gprefix}sr='git-stash-recover'
-alias ${gprefix}ss='git stash save --include-untracked'
-alias ${gprefix}sS='git stash save --patch --no-keep-index'
-alias ${gprefix}sw='git stash save --include-untracked --keep-index'
+alias ${gprefix}ss='git stash push --include-untracked' # requires Git 2.13
+alias ${gprefix}sS='git stash push --patch --no-keep-index'
+alias ${gprefix}sw='git stash push --include-untracked --keep-index'
 alias ${gprefix}si='git stash push --staged' # requires Git 2.35
 alias ${gprefix}su='git stash show --patch | git apply --reverse'
 
