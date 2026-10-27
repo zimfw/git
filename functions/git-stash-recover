@@ -1,15 +1,14 @@
 # vim:et sts=2 sw=2 ft=zsh
 builtin emulate -L zsh
 
-command git rev-parse --is-inside-work-tree >/dev/null || return 1
-
 if (( ! # )); then
   print -u2 "usage: ${0} <commit...>"
   return 2
 fi
 
-local commit
-for commit in "${@}"; do
-  command git update-ref \
-    -m "$(command git log -1 --pretty='format:%s' ${commit})" refs/stash ${commit}
+local gcommit
+local -i gerror=0
+for gcommit in "${@}"; do
+  command git stash store -m "$(command git log -1 --pretty='format:%s' ${gcommit})" ${gcommit} || gerror=1
 done
+return ${gerror}
