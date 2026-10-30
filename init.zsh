@@ -83,6 +83,7 @@ alias ${gprefix}fc='git clone'
 alias ${gprefix}fm='git pull --no-rebase'
 alias ${gprefix}fr='git pull --rebase'
 alias ${gprefix}fu='git pull --ff-only --all --prune'
+alias ${gprefix}fs='git-sync'
 
 # Grep (g)
 alias ${gprefix}g='git grep'
@@ -229,7 +230,7 @@ alias ${gprefix}WX='git worktree remove --force'
 alias ${gprefix}y='git switch' # requires Git 2.23
 alias ${gprefix}yc='git switch --create'
 alias ${gprefix}yd='git switch --detach'
-alias ${gprefix}ym='git switch "$(git-default-branch 2>/dev/null)"'
+alias ${gprefix}ym='git switch "$(git-branch-default 2>/dev/null)"'
 
 # Misc
 alias ${gprefix}..='cd "$(git-root || print .)"'

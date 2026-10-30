@@ -27,9 +27,9 @@ Aliases
   * `Gbs` lists branches and their commits with ancestry graphs.
   * `GbS` lists local and remote branches and their commits with ancestry graphs.
   * `Gbu` unsets the remote-tracking information for the current or given branch.
-  * `GbG` deletes all local branches tracking remote branches that are gone.
+  * `GbG` deletes branches with remote gone (forced).
   * `Gbx` deletes a branch.
-  * `GbX` deletes a branch irrespective of its merged status.
+  * `GbX` deletes a branch (forced).
 
 ### Commit
 
@@ -81,7 +81,8 @@ Aliases
   * `Gfc` clones a repository into a new directory.
   * `Gfm` fetches from and merges with another repository or local branch.
   * `Gfr` fetches from and rebases on top of another repository or local branch.
-  * `Gfu` prunes stale remote-tracking branches, fetches all remotes and merges.
+  * `Gfu` prunes and fetches all remotes, and fast-forwards current branch.
+  * `Gfs` prunes and fetches all remotes, fast-forwards all branches, and deletes branches with remote gone.
 
 ### Grep
 
@@ -271,10 +272,10 @@ Functions
 
   * `git-alias-lookup` lists the aliases defined here searching at a given path, by given regular expressions.
   * `git-branch-current` displays the current branch.
+  * `git-branch-default` displays the default branch.
   * `git-branch-delete-interactive` asks for confirmation to also delete the upstream remote branch(es).
-  * `git-branch-remote-tracking` lists all local branches with none or given remote-tracking status
+  * `git-branch-remote-tracking` lists all branches with none or given remote-tracking status
      (gone, ahead, behind, or ahead behind).
-  * `git-default-branch` displays the default branch.
   * `git-dir` displays the path to the Git directory.
   * `git-edit-unmerged` opens all unmerged files in the editor.
   * `git-ignore-add` adds any arguments to the .gitignore in the project root.
@@ -283,3 +284,4 @@ Functions
   * `git-stash-recover` recovers given dropped stashed states.
   * `git-submodule-move` moves a submodule.
   * `git-submodule-remove` removes a submodule.
+  * `git-sync` prunes and fetches all remotes, fast-forwards all branches, and deletes branches with remote gone.

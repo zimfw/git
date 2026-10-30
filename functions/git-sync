@@ -1,0 +1,62 @@
+# vim:et sts=2 sw=2 ft=zsh
+
+# Syncs the repository with its remotes, only making changes that can't lose work:
+#   * Fetches all remotes, pruning remote-tracking branches deleted in the remote.
+#   * Updates origin/HEAD to the remote default branch, if it's missing or dangling.
+#   * Fast-forwards branches that are behind, except ones checked out in other worktrees.
+#   * Deletes branches with remote gone that are merged into the remote default branch, except ones
+#     checked out in other worktrees. If the current branch is one of them, switches to the default
+#     branch first, unless Git refuses because of local changes.
+#   * Fast-forwards the current branch, unless Git refuses because of local changes.
+# Never stashes changes, never rebases, merges or resets branches, only deletes merged branches
+# with remote gone. Squash-merged branches are kept, use GbG to delete them too.
+
+builtin emulate -L zsh
+
+[[ -n $(command git remote) ]] || return 1
+local -i gerror=0
+command git fetch --all --prune
+case ${?} in
+  0) ;;
+  128) return 1 ;;
+  *) gerror=1 ;;
+esac
+local gref
+local -a grefs gfields grefspecs ggone
+local -r gcurrent=$(git-branch-current)
+if ! command git rev-parse -q --verify refs/remotes/origin/HEAD >/dev/null 2>&1; then
+  # Query the remote only if origin/HEAD is missing or dangling locally
+  command git remote set-head origin --auto >/dev/null || gerror=1
+fi
+grefs=(${(f)"$(command git for-each-ref --format='%(refname:lstrip=2)%00%(upstream:short)%00%(upstream:track,nobracket)%00%(worktreepath)' refs/heads)"}) || gerror=1 # worktreepath requires Git 2.23
+for gref in ${grefs}; do
+  gfields=("${(@0)gref}")
+  if [[ ${gfields[3]} == gone ]]; then
+    # Is the current branch or is not checked out in any worktree
+    if [[ ${gfields[1]} == ${gcurrent} || -z ${gfields[4]} ]] ggone+=(${gfields[1]})
+  elif [[ ${gfields[3]} == *behind* && -z ${gfields[4]} ]]; then
+    # Is behind its upstream and is not checked out in any worktree
+    grefspecs+=(${gfields[2]}:${gfields[1]})
+  fi
+done
+if (( ${#grefspecs} )); then
+  command git fetch . ${grefspecs} || gerror=1
+fi
+if (( ${#ggone} )); then
+  local -r gdefault=$(git-branch-default)
+  # Only delete branches merged into the remote default branch
+  ggone=(${(f)"$(command git branch --format='%(refname:short)' --merged=origin/${gdefault} ${ggone})"}) || gerror=1
+fi
+if (( ${ggone[(Ie)${gcurrent}]} )); then
+  if ! command git switch ${gdefault}; then
+    # Could not switch away from the current branch, so don't delete it
+    ggone=(${ggone:#${gcurrent}})
+    gerror=1
+  fi
+else
+  command git merge --ff-only || gerror=1
+fi
+if (( ${#ggone} )); then
+  command git branch --delete --force ${ggone} || gerror=1
+fi
+return ${gerror}
