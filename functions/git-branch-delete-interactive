@@ -13,6 +13,8 @@ command git branch --delete ${@} || gerror=1
 if (( ${#gremotes} )) && read -q "?Also delete remote branch(es) ${gremotes} [y/N]? "; then
   print
   local gremote
-  for gremote (${gremotes}) command git push ${gremote%%/*} :${gremote#*/} || gerror=1
+  for gremote in ${gremotes}; do
+    command git push ${gremote%%/*} :${gremote#*/} || gerror=1
+  done
 fi
 return ${gerror}
